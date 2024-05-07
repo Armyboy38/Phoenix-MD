@@ -3,10 +3,10 @@ const fs = require("fs");
 if (fs.existsSync("config.env"))
   require("dotenv").config({ path: "./config.env" });
 
-const toBool = (x) => x == "true";
+const toBool = (x) => x == true;
 
 DATABASE_URL = process.env.DATABASE_URL || "./lib/database.db";
-let HANDLER = "false";
+let HANDLER = false;
 
 module.exports = {
   //For Enabling Commands Like AUTO_STATUS_RED Type true For Disenabling Type false
@@ -14,23 +14,23 @@ module.exports = {
   //_________________________________________________________________________________________________________________________________
   LOGS: toBool(process.env.LOGS) || true,
   //_________________________________________________________________________________________________________________________________
-  ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
+  ANTILINK_ACTION: process.env.ANTI_LINK || kick,
   //_________________________________________________________________________________________________________________________________
-  AUTO_REACT: process.env.AUTO_REACT || 'false',
+  AUTO_REACT: process.env.AUTO_REACT || false,
   //_________________________________________________________________________________________________________________________________
   AUDIO_DATA: process.env.AUDIO_DATA || "Phoenix-MD;Abhishek Suresh;https://graph.org/file/8976892f2f615077b48cd.jpg",
   //_________________________________________________________________________________________________________________________________
-  AUTO_STATUS_READ: process.env.AUTO_STATUS_READ || 'true',
+  AUTO_STATUS_READ: process.env.AUTO_STATUS_READ || true,
   //_________________________________________________________________________________________________________________________________
   SESSION_ID: process.env.SESSION_ID || "Phoenix~cd62c0c9702c082f47d38b662243abf8", //Enter Your Session Id Here
   //_________________________________________________________________________________________________________________________________
   SUDO: process.env.SUDO || "2349025902700",
   //_________________________________________________________________________________________________________________________________
-  SPAM_COUNT: process.env.SPAM_COUNT || "10",
+  SPAM_COUNT: process.env.SPAM_COUNT || 10,
   //_________________________________________________________________________________________________________________________________
-  LANG: process.env.LANG || "EN",
+  LANG: process.env.LANG || EN,
   //_________________________________________________________________________________________________________________________________
-  HANDLERS: process.env.PREFIX || '.',
+  HANDLERS: process.env.PREFIX || .,
   //_________________________________________________________________________________________________________________________________
   RMBG_KEY: process.env.RMBG_KEY || true,
   //_________________________________________________________________________________________________________________________________
